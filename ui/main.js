@@ -12,8 +12,6 @@ submit.onclick = function (){
         if(request.readyState === XMLHttpRequest.DONE){
             //take some action
             if(request.status === 200){
-                //capture a list of name and render it as a list
-               console.log('user logged in');
                alert('logged in successfully');
             }else if (request.status === 403){
                 alert('username/password is incorrect');
@@ -22,7 +20,6 @@ submit.onclick = function (){
             }
                 
             }
-        }
         //not done yet
      };
      // make the request
@@ -33,5 +30,4 @@ submit.onclick = function (){
      request.open('POST', 'http://javedalikhan50.imad.hasura-app.io/login', true);
      request.setRequestHeader('Content-Type', 'application/json');
      request.send(JSON.stringify({username: username, password: password}));
-    
 };
